@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
+    $nael = 2;
     return view('home');
 });
+
+Route::get('/ajouterEmploye', function(){
+    return view('vues/formEmploye');
+});
+
+Route::post('/postEmploye', [EmployeControleur::class, 'postAjouterEmploye']);

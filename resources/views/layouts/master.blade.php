@@ -27,8 +27,10 @@
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse-target">
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/listerEmploye') }}" data-toggle="collapse" datatarget=".navbar-collapse.in">Lister</a></li>
-                    <li><a href="{{ url('/ajouterEmploye') }}" data-toggle"collapse" datatarget=".navbar-collapse.in">Ajouter </a></li>
+                    <li><a href="{{ url('/listerEmploye') }}" data-toggle="collapse" datatarget=".navbar-collapse.in">Lister</a>
+                    </li>
+                    <li><a href="{{ url('/ajouterEmploye') }}" data-toggle="collapse" datatarget=".navbar-collapse.in">Ajouter </a>
+                    </li>
                 </ul>
             </div>
         </div><!--/.container-fluid -->
