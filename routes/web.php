@@ -19,8 +19,6 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/ajouterEmploye', function(){
-    return view('vues/formEmploye');
-});
-
-Route::post('/postEmploye', [EmployeControleur::class, 'postAjouterEmploye']);
+Route::get('/formLogin', [VisiteurController::class, 'getLogin']);
+Route::get('/login', [VisiteurController::class, 'signIn']);
+Route::get('/getLogout', [VisiteurController::class, 'signOut']);
