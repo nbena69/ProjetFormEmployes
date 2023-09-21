@@ -1,6 +1,4 @@
 <?php
-
-
 /**
  * Authentifie le visiteur sur son login et Mdp
  * Si c'est OK, son id est enregistrer dans la session
@@ -30,3 +28,6 @@ public function login(type $login, $pwd) {
     }
     return $connected;
 }
+?>
+
+
