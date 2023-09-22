@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    $nael = 2;
     return view('home');
 });
 
@@ -23,4 +22,5 @@ Route::get('/ajouterEmploye', function(){
     return view('vues/formEmploye');
 });
 
-Route::post('/postEmploye', [EmployeControleur::class, 'postAjouterEmploye']);
+Route::post('/postEmploye', [\App\Http\Controllers\EmployeControleur::class, 'postAjouterEmploye']);
+Route::get('/listerEmploye', [\App\Http\Controllers\EmployeControleur:: class, 'listerEmployes']);

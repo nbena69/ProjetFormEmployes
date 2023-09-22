@@ -10,7 +10,7 @@ use DB;
 
 class Employe extends Model
 {
-    protected $table = 'Employe';
+    protected $table = 'employe'; // Utilisez "employe" en minuscules
     public $timestamps = false;
     protected $fillable = [
         'civilite',
@@ -21,6 +21,6 @@ class Employe extends Model
         'interet',
         'message'
     ];
-
 }
+
 
