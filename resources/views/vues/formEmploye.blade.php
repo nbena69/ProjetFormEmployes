@@ -14,7 +14,7 @@
                         {!! Form::radio('civilite', 'Mme', false) !!} Madame
                     </label>
                     <label class="radio-inline">
-                        {!! Form::radio('civilite', 'Ng', false) !!} Non genré
+                        {!! Form::radio('civilite', 'Non genré', false) !!} Non genré
                     </label>
                 </div>
             </div>
@@ -43,7 +43,7 @@
             <div class="form-group">
                 <label class="col-md-3 col-sm-3 control-label">Profil :</label>
                 <div class="col-md-6 col-sm-6">
-                    {!! Form::select('profil', ['parti' => 'Un particulier', 'profe' => 'Un Professionnel', 'insti' => 'Un institutionnel'], 'profe', ['class' => 'form-control']) !!}
+                    {!! Form::select('profil', ['particulier' => 'Un particulier', 'professionnelle' => 'Un Professionnel', 'institutionnel' => 'Un institutionnel'], 'professionnel', ['class' => 'form-control']) !!}
                 </div>
             </div>
 
@@ -51,7 +51,7 @@
                 <label class="col-md-3 col-sm-3 control-label">Quel type de prestation recherchez-vous ?</label>
                 <div class="col-md-6 col-sm-6">
                     <label class="checkbox-inline">
-                        {!! Form::checkbox('interet[]', 'loc', false) !!} Location de mobilier
+                        {!! Form::checkbox('interet[]', 'location', false) !!} Location de mobilier
                     </label>
                     <label class="checkbox-inline">
                         {!! Form::checkbox('interet[]', 'achat', false) !!} Achat de mobilier

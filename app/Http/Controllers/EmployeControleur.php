@@ -14,13 +14,13 @@ class EmployeControleur extends Controller
     {
         // Validate the form data
         $validator = Validator::make($request->all(), [
-            'civilite' => 'required|in:Mr,Mme,Ng',
+            'civilite' => 'required|in:Mr,Mme,Non genré',
             'prenom' => 'required|string',
             'nom' => 'required|string',
             'passe' => 'required|string',
-            'profil' => 'required|in:parti,profe,insti',
+            'profil' => 'required|in:particulier,professionnelle,institutionnel',
             'interet' => 'required|array',
-            'message' => 'in:loc,achat', // Le champ message est-il facultatif ?
+            'message' => 'in:loc, achat', // Le champ message est-il facultatif ?
         ]);
 
         if ($validator->fails()) {
@@ -33,7 +33,7 @@ class EmployeControleur extends Controller
             $nom = $request->input("nom");
             $pwd = $request->input("passe");
             $profil = $request->input("profil");
-            $interet = implode(',', $request->input("interet"));
+            $interet = implode(', ', $request->input("interet"));
             $message = $request->input("message"); // Correction
 
             $unEmployeService = app(ServiceEmploye::class); // Utilisation de l'injection de dépendance
