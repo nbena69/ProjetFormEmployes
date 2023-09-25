@@ -23,4 +23,5 @@ Route::get('/ajouterEmploye', function(){
 });
 
 Route::post('/postEmploye', [\App\Http\Controllers\EmployeControleur::class, 'postAjouterEmploye']);
-Route::get('/listerEmploye', [\App\Http\Controllers\EmployeControleur:: class, 'listerEmployes']);
+Route::get('/listerEmploye', [\App\Http\Controllers\EmployeControleur::class, 'listerEmployes']);
+Route::get('/modifierEmploye/{id}', [\App\Http\Controllers\EmployeControleur::class, 'updateEmploye']);

@@ -40,4 +40,16 @@ class ServiceEmploye
             throw new MonException($e->getMessage(), 5);
         }
     }
+
+    public function getEmploye($id) {
+        try {
+            $unemploye = DB::table('Employe')
+                ->select()
+                ->where('numEmp', '=', $id)
+                ->first();
+            return $unemploye;
+        } catch (\Illuminate\Database\QueryException $e) {
+            throw new MonException($e->getMessage(),5);
+        }
+    }
 }
