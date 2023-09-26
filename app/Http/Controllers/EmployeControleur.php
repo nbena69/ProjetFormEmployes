@@ -73,8 +73,9 @@ class EmployeControleur extends Controller
             return view('vues/error', compact('monErreur'));
         } catch (Exception $e) {
             $monErreur = $e->getMessage();
-            return view('vues/formEmployeModifier', compact('unEmploye'));
+            return view('vues/error', compact('monErreur'));
         }
+        return view('vues/formEmployeModifier', compact('unEmploye'));
     }
 
     public function postmodificationEmploye($id = null) {
