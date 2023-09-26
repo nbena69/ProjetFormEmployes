@@ -18,10 +18,15 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/ajouterEmploye', function(){
+Route::get('/ajouterEmploye', function () {
     return view('vues/formEmploye');
 });
 
 Route::post('/postEmploye', [\App\Http\Controllers\EmployeControleur::class, 'postAjouterEmploye']);
 Route::get('/listerEmploye', [\App\Http\Controllers\EmployeControleur::class, 'listerEmployes']);
 Route::get('/modifierEmploye/{id}', [\App\Http\Controllers\EmployeControleur::class, 'updateEmploye']);
+Route::post('/postmodifierEmploye/{id}',
+    array(
+        'uses' => 'App\Http\Controllers\EmployeControleur@postmodificationEmploye',
+        'as' => 'postmodifierEmploye'
+    ));
