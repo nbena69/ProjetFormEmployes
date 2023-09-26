@@ -53,4 +53,15 @@ class ServiceEmploye
         }
     }
 
+    public function modificationEmploye($code, $civilite, $prenom, $nom, $pwd, $profil, $interet, $message) {
+        try {
+            DB::table('employe')
+                ->where('numEmp', $code)
+                ->update(['civilite' => $civilite, 'nom' => $nom,
+                    'prenom' => $prenom, 'pwd' => md5($pwd),
+                    'profil' => $profil, 'interet' => $interet, 'message' => $message]);
+        } catch (\Illuminate\DataBase\QueryException $e) {
+            throw new MonException($e->getMessage(),5);
+        }
+    }
 }
