@@ -64,8 +64,9 @@ class EmployeControleur extends Controller
         }
     }
 
-    public function updateEmploye($id) {
-        try{
+    public function updateEmploye($id)
+    {
+        try {
             $unEmployeService = new ServiceEmploye();
             $unEmploye = $unEmployeService->getEmploye($id);
         } catch (MonException $e) {
@@ -78,7 +79,8 @@ class EmployeControleur extends Controller
         return view('vues/formEmployeModifier', compact('unEmploye'));
     }
 
-    public function postmodificationEmploye($id = null) {
+    public function postmodificationEmploye($id = null)
+    {
         $code = $id;
         $civilite = Request::input("civilite");
         $nom = Request::input("nom");
@@ -90,7 +92,7 @@ class EmployeControleur extends Controller
 
         try {
             $unEmployeService = new ServiceEmploye();
-            $unEmployeService->modificationEmploye($id,$civilite,$prenom,$nom,$pwd,$profil,$interet,$message);
+            $unEmployeService->modificationEmploye($id, $civilite, $prenom, $nom, $pwd, $profil, $interet, $message);
             return view('home');
         } catch (MonException $e) {
             $monErreur = $e->getMessage();
